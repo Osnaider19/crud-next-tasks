@@ -19,7 +19,7 @@ export async function POST(request: NextRequest, params: Params) {
     const saveTask = await newTask.save();
     return NextResponse.json(saveTask);
   } catch (error) {
-    return NextResponse.json("error" , {
+    return NextResponse.json("error" + error   , {
      status : 400,
      statusText : "invalid credencials"
     });
